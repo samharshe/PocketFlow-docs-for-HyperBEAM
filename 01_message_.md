@@ -80,7 +80,7 @@ graph LR
     C[HTTP Signed Message] --> D(hb_message / dev_codec_httpsig_conv);
     E[JSON / Flat Map] --> F(hb_message / dev_codec_flat);
 
-    B --> G{TABM (Internal Format)};
+    B --> G[TABM (Internal Format)];
     D --> G;
     F --> G;
 
