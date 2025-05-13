@@ -1,4 +1,4 @@
-docs for [HyperBEAM](https://github.com/permaweb/HyperBEAM) made using [Gemini 2.5 Pro](https://deepmind.google/technologies/gemini/pro/) by [PocketFlow](https://github.com/The-Pocket/PocketFlow) via [PocketFlow-Tutorial-Codebase-Knowledge](https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge).
+docs for [HyperBEAM](https://github.com/permaweb/HyperBEAM) made using [Gemini 2.5 Pro](https://deepmind.google/technologies/gemini/pro/) by [PocketFlow](https://github.com/The-Pocket/PocketFlow) via [AI Codebase Knowledge Builder](https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge).
 
 # Tutorial: HyperBEAM
 
