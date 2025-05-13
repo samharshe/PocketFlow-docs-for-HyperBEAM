@@ -37,34 +37,34 @@ graph TD
     end
 
     subgraph Cache Layer
-        B(hb_cache: read/write)
+        B[hb_cache: read/write]
     end
 
     subgraph Storage Abstraction
-        C(hb_store: manages backends)
+        C[hb_store: manages backends]
     end
 
     subgraph Physical Storage Backends
-        D[Local Filesystem<br/>(hb_store_fs)]
-        E[Local Database<br/>(hb_store_rocksdb)]
-        F[Remote Node<br/>(hb_store_remote_node)]
-        G[Arweave Gateway<br/>(hb_store_gateway)]
+        D[Local Filesystem hb_store_fs]
+        E[Local Database hb_store_rocksdb]
+        F[Remote Node hb_store_remote_node]
+        G[Arweave Gateway hb_store_gateway]
     end
 
-    A -- Uses ID/Hashpath --> B;
-    B -- Decides where to look --> C;
-    C -- Tries each backend --> D;
-    C -- Tries each backend --> E;
-    C -- Tries each backend --> F;
-    C -- Tries each backend --> G;
+    A -- Uses ID/Hashpath --> B
+    B -- Decides where to look --> C
+    C -- Tries each backend --> D
+    C -- Tries each backend --> E
+    C -- Tries each backend --> F
+    C -- Tries each backend --> G
 
-    D -- Data --> C;
-    E -- Data --> C;
-    F -- Data --> C;
-    G -- Data --> C;
+    D -- Data --> C
+    E -- Data --> C
+    F -- Data --> C
+    G -- Data --> C
 
-    C -- Returns data --> B;
-    B -- Returns data --> A;
+    C -- Returns data --> B
+    B -- Returns data --> A
 
     style B fill:#f9f,stroke:#333,stroke-width:2px
     style C fill:#ccf,stroke:#333,stroke-width:2px
