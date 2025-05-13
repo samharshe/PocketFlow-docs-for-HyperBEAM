@@ -1,5 +1,7 @@
 docs for [HyperBEAM](https://github.com/permaweb/HyperBEAM) made using [Gemini 2.5 Pro](https://deepmind.google/technologies/gemini/pro/) by [PocketFlow](https://github.com/The-Pocket/PocketFlow) via [AI Codebase Knowledge Builder](https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge).
 
+---
+
 # Tutorial: HyperBEAM
 
 HyperBEAM is the software that runs *decentralized computations* based on the **AO-Core protocol**. It acts as a node in the AO network, processing *messages* using modular components called *devices*. These messages trigger computations, potentially including **WASM Execution**, and their results are linked together cryptographically using *Hashpaths*, forming verifiable computational histories. Nodes use **Storage & Cache** mechanisms to efficiently manage data and computations.
