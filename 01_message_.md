@@ -76,23 +76,23 @@ Think of TABM as HyperBEAM's internal "universal translator" for messages. Messa
 
 ```mermaid
 graph LR
-    A[Arweave TX / ANS-104] --> B(hb_message / dev_codec_ans104);
-    C[HTTP Signed Message] --> D(hb_message / dev_codec_httpsig_conv);
-    E[JSON / Flat Map] --> F(hb_message / dev_codec_flat);
+    A[Arweave TX / ANS-104] --> B[hb_message / dev_codec_ans104]
+    C[HTTP Signed Message] --> D[hb_message / dev_codec_httpsig_conv]
+    E[JSON / Flat Map] --> F[hb_message / dev_codec_flat]
 
-    B --> G[TABM (Internal Format)];
-    D --> G;
-    F --> G;
+    B --> G[TABM]
+    D --> G
+    F --> G
 
-    G --> H(hb_message / dev_codec_structured);
-    H --> I[Rich AO-Core Message];
+    G --> H[hb_message / dev_codec_structured]
+    H --> I[Rich AO-Core Message]
 
-    G --> J(hb_message / dev_codec_ans104);
-    J --> K[Arweave TX / ANS-104];
-    G --> L(hb_message / dev_codec_httpsig_conv);
-    L --> M[HTTP Signed Message];
-    G --> N(hb_message / dev_codec_flat);
-    N --> O[JSON / Flat Map];
+    G --> J[hb_message / dev_codec_ans104]
+    J --> K[Arweave TX / ANS-104]
+    G --> L[hb_message / dev_codec_httpsig_conv]
+    L --> M[HTTP Signed Message]
+    G --> N[hb_message / dev_codec_flat]
+    N --> O[JSON / Flat Map]
 
     style G fill:#f9f,stroke:#333,stroke-width:2px
 ```
