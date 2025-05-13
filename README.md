@@ -1,56 +1,71 @@
+docs for [HyperBEAM](https://github.com/permaweb/HyperBEAM) made using [Gemini 2.5 Pro](https://deepmind.google/technologies/gemini/pro/) by [PocketFlow](https://github.com/The-Pocket/PocketFlow) via [PocketFlow-Tutorial-Codebase-Knowledge](https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge).
+
 # Tutorial: HyperBEAM
 
-HyperBEAM is software that lets computers join a network for **decentralized computing**, following the rules of the *AO-Core protocol*.
-Think of it as building a global, shared supercomputer where *Messages* carry tasks and data, and specialized mini-applications called *Devices* perform the computational work.
-This allows for flexible, scalable, and autonomous applications to run without a central authority.
+HyperBEAM is the software that runs *decentralized computations* based on the **AO-Core protocol**. It acts as a node in the AO network, processing *messages* using modular components called *devices*. These messages trigger computations, potentially including **WASM Execution**, and their results are linked together cryptographically using *Hashpaths*, forming verifiable computational histories. Nodes use **Storage & Cache** mechanisms to efficiently manage data and computations.
 
 
-**Source Repository:** [None](None)
+**Source Repository:** [HyperBEAM](https://github.com/permaweb/HyperBEAM)
 
 ```mermaid
 flowchart TD
-    A0["Messages
+    A0["AO-Core Protocol
 "]
-    A1["Devices
+    A1["HyperBEAM Node
 "]
-    A2["AO-Core Protocol
+    A2["Message
 "]
-    A3["HyperBEAM Node
+    A3["Device
 "]
-    A4["AO Processes (`~process@1.0`)
+    A4["Hashpath
 "]
-    A5["HTTP Layer & HyperPATHs
+    A5["Process
 "]
-    A6["AO-Core Resolution Engine (`hb_ao`)
+    A6["WASM Execution (BEAMR)
 "]
-    A3 -- "Implements" --> A2
-    A2 -- "Defines rules for" --> A1
-    A2 -- "Defines structure of" --> A0
-    A1 -- "Processes" --> A0
-    A6 -- "Instructs" --> A1
-    A6 -- "Resolves" --> A0
-    A5 -- "Generates" --> A0
-    A1 -- "Manage" --> A4
-    A4 -- "Exchange" --> A0
-    A3 -- "Exposes" --> A5
+    A7["Storage & Cache
+"]
+    A8["Meta Device (~meta@1.0)
+"]
+    A9["Codec Devices (e.g., dev_codec_*)
+"]
+    A1 -- "Implements" --> A0
+    A1 -- "Runs/Manages" --> A3
+    A1 -- "Uses" --> A7
+    A8 -- "Configures" --> A1
+    A3 -- "Processes/Interprets" --> A2
+    A3 -- "Manages (e.g., ~process@1.0)" --> A5
+    A3 -- "Enables (e.g., ~wasm64@1.0)" --> A6
+    A9 -- "Converts" --> A2
+    A9 -- "Is a Type Of" --> A3
+    A5 -- "Uses for State Tracking" --> A4
+    A6 -- "Executes Within" --> A1
+    A4 -- "Links" --> A2
+    A7 -- "Stores/Retrieves" --> A2
 ```
 
 ## Chapters
 
-1. [HyperBEAM Node
-](01_hyperbeam_node_.md)
+1. [Message
+](01_message_.md)
 2. [AO-Core Protocol
 ](02_ao_core_protocol_.md)
-3. [Messages
-](03_messages_.md)
-4. [Devices
-](04_devices_.md)
-5. [HTTP Layer & HyperPATHs
-](05_http_layer___hyperpaths_.md)
-6. [AO Processes (`~process@1.0`)
-](06_ao_processes____process_1_0___.md)
-7. [AO-Core Resolution Engine (`hb_ao`)
-](07_ao_core_resolution_engine___hb_ao___.md)
+3. [HyperBEAM Node
+](03_hyperbeam_node_.md)
+4. [Device
+](04_device_.md)
+5. [Process
+](05_process_.md)
+6. [WASM Execution (BEAMR)
+](06_wasm_execution__beamr__.md)
+7. [Hashpath
+](07_hashpath_.md)
+8. [Storage & Cache
+](08_storage___cache_.md)
+9. [Meta Device (~meta@1.0)
+](09_meta_device___meta_1_0__.md)
+10. [Codec Devices (e.g., dev_codec_*)
+](10_codec_devices__e_g___dev_codec____.md)
 
 
 ---
