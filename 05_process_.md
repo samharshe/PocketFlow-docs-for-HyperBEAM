@@ -45,13 +45,13 @@ Key characteristics:
 
 ```mermaid
 graph LR
-    A[State 0 (Counter=0)] -- Message 1 (Increment) --> B(Compute);
-    B --> C[State 1 (Counter=1)];
-    C -- Message 2 (Increment) --> D(Compute);
-    D --> E[State 2 (Counter=2)];
-    E -- Message 3 (Read Value) --> F(Compute);
-    F --> G[Result: 2];
-    G --> E; %% Read doesn't change state
+    A[State 0 Counter=0] -- Message 1 Increment --> B[Compute]
+    B --> C[State 1 Counter=1]
+    C -- Message 2 Increment --> D[Compute]
+    D --> E[State 2 Counter=2]
+    E -- Message 3 Read Value --> F[Compute]
+    F --> G[Result: 2]
+    G --> E
 
     style A fill:#f9f
     style C fill:#f9f
