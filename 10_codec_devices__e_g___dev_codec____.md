@@ -56,28 +56,28 @@ The core idea of `hb_message:convert/4(Msg, TargetFormat, SourceFormat, Opts)` i
 ```mermaid
 graph LR
     subgraph External World
-        A[Arweave TX (ANS-104)]
+        A[Arweave TX ANS-104]
         B[HTTP Signed Message]
-        C[Flat Config / JSON]
+        C[Flat Config JSON]
     end
 
     subgraph HyperBEAM / AO
-        D{TABM (Internal Format)}
-        E(AO Process / Computation)
+        D[TABM Internal Format]
+        E[AO Process Computation]
     end
 
-    A -- dev_codec_ans104:from/1 --> D;
-    B -- dev_codec_httpsig_conv:from/1 --> D;
-    C -- dev_codec_flat:from/1 / dev_codec_json:from/1 --> D;
+    A -- dev_codec_ans104:from/1 --> D
+    B -- dev_codec_httpsig_conv:from/1 --> D
+    C -- dev_codec_flat:from/1 / dev_codec_json:from/1 --> D
 
-    D -- dev_codec_ans104:to/1 --> A;
-    D -- dev_codec_httpsig_conv:to/1 --> B;
-    D -- dev_codec_flat:to/1 / dev_codec_json:to/1 --> C;
+    D -- dev_codec_ans104:to/1 --> A
+    D -- dev_codec_httpsig_conv:to/1 --> B
+    D -- dev_codec_flat:to/1 / dev_codec_json:to/1 --> C
 
-    D -- dev_codec_structured:to/1 --> F[Rich AO Message];
-    F -- dev_codec_structured:from/1 --> D;
+    D -- dev_codec_structured:to/1 --> F[Rich AO Message]
+    F -- dev_codec_structured:from/1 --> D
 
-    E <--> F; % Process interacts with Rich AO Message
+    E <--> F
 
     style D fill:#f9f,stroke:#333,stroke-width:2px
 ```

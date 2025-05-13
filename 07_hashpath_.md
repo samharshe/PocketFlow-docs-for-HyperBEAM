@@ -63,8 +63,8 @@ The magic of Hashpaths comes from how they link computations together. Let's vis
     Our chain now looks like this:
     ```mermaid
     graph LR
-        S0[State 0<br/>HP0] -- Msg A ID_A --> S1[State 1<br/>HP1 = Hash(HP0, ID_A)]
-        S1 -- Msg B ID_B --> S2[State 2<br/>HP2 = Hash(HP1, ID_B)]
+        S0[State 0 HP0] -- Msg A ID_A --> S1[State 1 HP1]
+        S1 -- Msg B ID_B --> S2[State 2 HP2]
 
         style S0 fill:#f9f
         style S1 fill:#ccf
